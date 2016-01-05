@@ -1,4 +1,4 @@
-public class Person {
+public class day4 {
   
     int age;    
     public Person(int initial_Age) {
