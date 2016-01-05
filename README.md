@@ -1,2 +1,3 @@
 # 30DaysHR
-Solutions to the 30days of code challenge HR
+
+Python and Java solutions for this basic challenge!! Good for anyone learning to code or trying to learn fast basic sintax switching from python to java or viceversa, feel free to add other languages!
