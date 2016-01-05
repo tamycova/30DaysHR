@@ -1,0 +1,1 @@
+print("Not "*(int(input().strip())in{2,4}|set(range(22,101,2)))+'Weird')

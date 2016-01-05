@@ -1,0 +1,10 @@
+"Enter your code here. Read input from STDIN. Print output to STDOUT"
+Transcript  show:'Primitive : double'; cr.
+Transcript  show:'Primitive : char'; cr.
+Transcript  show:'Primitive : boolean'; cr.
+Transcript  show:'Primitive : int'; cr.
+Transcript  show:'Referenced : String'; cr.
+Transcript  show:'Primitive : boolean'; cr.
+Transcript  show:'Primitive : double'; cr.
+Transcript  show:'Primitive : char'; cr.
+Transcript  show:'Referenced : String'; cr.
