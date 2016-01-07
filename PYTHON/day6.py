@@ -1,2 +1,6 @@
-array = ["1", "4", "3", "2"]
-print(" ".join(array[::-1]))
+#!/bin/python
+n = int(raw_input().strip())
+
+for i in range(1, n+1):
+        print ('#'*i).rjust(n)
+
