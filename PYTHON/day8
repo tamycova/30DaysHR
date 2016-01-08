@@ -1,0 +1,13 @@
+n=int(raw_input())
+d={}
+for i in range(n):
+    nam=raw_input()
+    ph=raw_input()
+    d[nam]=ph
+while(True):
+    s=raw_input()
+    if s=='':break
+    try :
+        print s+'='+d[s]
+    except :
+        print 'Not found'
