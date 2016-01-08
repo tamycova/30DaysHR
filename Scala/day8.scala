@@ -9,7 +9,8 @@ object Solution {
             val name = readLine
             read = name != null
             if(read)
-            println(if(phoneBook.contains(name)) s"$name="+phoneBook(name) else "Not found")
+                println(if(phoneBook.contains(name)) s"$name=${phoneBook(name)}" else "Not found")
         }
+
     }
 }
