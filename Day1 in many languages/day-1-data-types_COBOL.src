@@ -1,0 +1,14 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. HELLO.
+
+PROCEDURE DIVISION.
+    DISPLAY "Primitive : double".
+    DISPLAY "Primitive : char".
+    DISPLAY "Primitive : boolean".
+    DISPLAY "Primitive : int".
+    DISPLAY "Referenced : String".
+    DISPLAY "Primitive : boolean".
+    DISPLAY "Primitive : double".
+    DISPLAY "Primitive : char".
+    DISPLAY "Referenced : String".
+STOP RUN.

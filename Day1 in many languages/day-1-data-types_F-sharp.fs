@@ -1,0 +1,10 @@
+//Enter your code here. Read input from STDIN. Print output to STDOUT
+printfn "Primitive : double"
+printfn "Primitive : char"
+printfn "Primitive : boolean"
+printfn "Primitive : int"
+printfn "Referenced : String"
+printfn "Primitive : boolean"
+printfn "Primitive : double"
+printfn "Primitive : char"
+printfn "Referenced : String"
