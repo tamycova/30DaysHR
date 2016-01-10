@@ -1,47 +1,29 @@
-//
-//  day5Loops.swift
-//
-//  Created by Samuel A WINFUL on 1/1/16.
-//  Copyright © 2016 Samuel A WINFUL. All rights reserved.
-//  
+// Created By Ashok
+
 import Foundation
 
-func parseInts(line: String) -> [Int] {
-  var string   = line
-  var integers = [Int]()
-  
-  while string.containsString(" ") {
-    let spaceIndex = string.rangeOfString(" ")
-    let firstInt   = string[string.startIndex..<(spaceIndex?.startIndex)!]
-    string         = string[(spaceIndex?.endIndex)!..<string.endIndex]
-    integers.append(Int(firstInt)!)
-  }
-  
-  if !string.isEmpty {
-    integers.append(Int(string)!)
-  }
-  return integers
-}
+// striping new line character is the
+// default behavior of readLine
+let numberOfSeries = Int(readLine()!)! 
 
-func myPow(base: Int, exponent: Int) -> Int {
-  var sum = 1
-  for _ in 0..<exponent {
-    sum *= base
-  }
-  return sum
-}
+for _ in 0..<numberOfSeries{
 
-func day5Series(a a: Int, b: Int, N: Int) {
-  var sum = a
-  for (var i=N; i > 0; i--) {
-    sum += ( myPow(2, exponent: (N-i)) * b)
-    print("\(sum) ", terminator: "")
-  }
-  print("")
-}
+    var line = readLine()!
 
-let lines = Int(readLine()!)!
-for _ in 0..<lines {
-  let nextLineOfInts = parseInts(readLine()!)
-  day5Series(a: nextLineOfInts[0], b: nextLineOfInts[1], N: nextLineOfInts[2])
+    // Create an Int array on the fly using map
+    var lineArray = line.characters.split(" ").map { Int(String($0))! }
+    
+    let (aVar, bVar, NVar) = (lineArray[0], lineArray[1], lineArray[2])
+    
+    var sum = 0
+    
+    for firstLoop in 0..<NVar{
+        sum = 0
+        for secondLoop in 0...firstLoop{
+            sum += Int(pow(Double(2), Double(secondLoop)))
+        }
+        var total = aVar + (sum*bVar)
+        print("\(total)", terminator: " ")
+    }
+    print("")
 }
