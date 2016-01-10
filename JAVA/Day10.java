@@ -8,15 +8,19 @@ class Day10 extends MyScanner {
 
 	public static void main(String args[]) throws Exception {
 		Day10 in = new Day10();
+		BufferedWriter out = new BufferedWriter(
+				new OutputStreamWriter(System.out));
+
 		int t = in.nextInt();
 		while (t > 0) {
 			long n = in.nextLong();
-			StringBuilder str = new StringBuilder();
+			String s = new String();
 			while (n > 0) {
-				str.append(in.modulo(n, 2));
+				s = modulo(n, 2) + "" + s;
 				n = n >> 1;
 			}
-			System.out.println(str.reverse().toString());
+			out.write(s+"\n");
+			out.flush();
 			t--;
 		}
 	}
