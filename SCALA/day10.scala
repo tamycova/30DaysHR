@@ -7,7 +7,7 @@ object Solution {
     }
 }
 
-//solution 2 using List()
+//solution 2 using List() and dividing by 2
 object Solution {
     def main(args: Array[String]) {
         for(_ <- 0 until readInt) {
@@ -20,16 +20,18 @@ object Solution {
     }
 }
 
-//solution 3 using StringBuilder
+//solution 3 using StringBuilder and >>
 object Solution {
-  def main(args: Array[String]) {
+    def main(args: Array[String]) {
+
         for(_ <- 0 until readInt) {
             val bits = new StringBuilder()
             println(toBinary(readInt, bits))
         }
     }
+
     def toBinary(n: Int, bits: StringBuilder): String = n match {
        case 0 => bits.reverse.toString
-       case _ => toBinary(n/2,bits.append(n%2))
+       case _ => toBinary(n>>1,bits.append(n%2))
     }
 }
