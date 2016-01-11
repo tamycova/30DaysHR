@@ -1,0 +1,2 @@
+main = interact $ unlines . map (concat . map show . convert . read) . drop 1 . lines
+convert = reverse . map (`mod` 2) . takeWhile (>0) . iterate (`div` 2)
