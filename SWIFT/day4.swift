@@ -29,6 +29,6 @@ class Person {
   func yearPasses()
   {
       // Increment the age of the person in here
-      age = age+1;
+      age++
   }
 }
