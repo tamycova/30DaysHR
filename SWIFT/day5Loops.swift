@@ -2,18 +2,20 @@
 
 import Foundation
 
-let numberOfSeries = Int(readLine(stripNewline: true)!)!
+// striping new line character is the
+// default behavior of readLine
+let numberOfSeries = Int(readLine()!)! 
 
 for _ in 0..<numberOfSeries{
 
-    var line = readLine(stripNewline: true)!
-    var lineArray = line.characters.split(" ").map(String.init)
+    var line = readLine()!
+
+    // Create an Int array on the fly using map
+    var lineArray = line.characters.split(" ").map { Int(String($0))! }
     
-    var aVar : Int = Int(lineArray[0])!;
-    var bVar : Int = Int(lineArray[1])!;
-    var NVar : Int = Int(lineArray[2])!;
+    let (aVar, bVar, NVar) = (lineArray[0], lineArray[1], lineArray[2])
     
-    var sum : Int = 0
+    var sum = 0
     
     for firstLoop in 0..<NVar{
         sum = 0
