@@ -1,12 +1,9 @@
 
-import Foundation
-let numberOfEntries = Int(readLine()!)!
-var phoneBook = [String:String]()
+var noOfContacts = Int(readLine()!)!
+var phoneBook:[String:Int]=[:]
 
-// 
-for _ in 1 ... numberOfEntries {
-  let (name, number) = (readLine()!, readLine()!)
-    phoneBook[name] = number
+for _ in 0..<noOfContacts{
+phoneBook[readLine()!] = Int(readLine()!)!
 }
 
 while let key = readLine() {
