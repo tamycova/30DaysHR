@@ -8,8 +8,12 @@ for _ in 1...n{
         binaryArray.append(number%2)
         number = number/2
     }
-    binaryArray.reverse().forEach{
-        print("\($0)", terminator: "")
-    }
-    print("")
+    // Method 1 : small code but takes a bit processing power than other method
+    print(binaryArray.reverse().map(String.init).joinWithSeparator(""))
+    
+    // Method 2 : less weight on processor
+    //binaryArray.reverse().forEach{
+    //    print("\($0)", terminator: "")
+    //}
+    //print("")
 }
