@@ -1,42 +1,42 @@
-#include <vector>
+#include <algorithm>
 #include <iostream>
+#include <vector>
+using namespace std;
 
-
+int hourglass(vector< vector <int> >& arr) {
+    // store dimensions of 2D vector 
+    int n = arr.size(), o = arr[0].size();
+    
+    vector<int> ans;
+    // i < n - 2 because hourglass seeks
+    // 2 below; j < o -2 because 2 to the right
+    for (int i = 0; i < n - 2; i++) {
+        for (int j = 0; j < o - 2; j++) {
+            int sum = 0;
+            
+            // read current spot and two to the right
+            // and the three that are two rows below
+            for (int x = j; x <= j + 2; x++) {
+                sum += (arr[i][x] + arr[i+2][x]);
+            }
+            
+            // read that element in the middle
+            sum += arr[i+1][j+1];
+            
+            ans.push_back(sum);
+        }
+    }
+    
+    return *max_element(ans.begin(), ans.end());
+}
 int main(){
-	std::vector< std::vector<int> > arr(6, std::vector<int>(6));
-	for (int arr_i = 0; arr_i < 6; arr_i++){
-		for (int arr_j = 0; arr_j < 6; arr_j++){
-			std::cin >> arr[arr_i][arr_j];
-		}
-	}
-	
-	std::vector<std::vector<int>> hours(4, std::vector<int>(4));
-	
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			hours[i][j] += arr[i][j];
-			hours[i][j] += arr[i+1][j+1];
-
-			hours[i][j] += arr[i][j+1];
-			hours[i][j] += arr[i][j+2];
-			hours[i][j] += arr[i+2][j];
-			hours[i][j] += arr[i + 2][j + 1];
-			hours[i][j] += arr[i + 2][j + 2];
-		}
-	}
-	int max = INT_MIN;
-	for (auto h : hours)
-	{
-		for (auto t : h)
-		{
-			if (t > max)
-			{
-				max = t;
-			}
-		}
-	}
-	std::cout << max;
-	return 0;
+    vector< vector<int> > arr(6,vector<int>(6));
+    for(int arr_i = 0;arr_i < 6;arr_i++){
+       for(int arr_j = 0;arr_j < 6;arr_j++){
+          cin >> arr[arr_i][arr_j];
+       }
+    }
+    
+    cout << hourglass(arr) << endl;
+    return 0;
 }
