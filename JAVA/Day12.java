@@ -15,10 +15,9 @@ class Grade extends Student{
            return 'A';
        }else if(score>=75 && score<90){
            return 'E';
-       }else if(score>=90 && score<=100){
+       }else{
            return 'O';
        }
-       return 'E';
    }
    
 }
