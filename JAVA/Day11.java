@@ -22,6 +22,7 @@ public class Solution {
                 sum.add(temp);
             }
         }
+        
         System.out.println(Collections.max(sum));
     }
 }
