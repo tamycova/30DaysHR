@@ -9,11 +9,11 @@ class Grade extends Student{
    public char calculate(){
        if(score<40){
            return 'D';
-       }else if(score>=40 && score<60){
+       }else if(score<60){
            return 'B';
-       }else if(score>=60 && score<75){
+       }else if(score<75){
            return 'A';
-       }else if(score>=75 && score<90){
+       }else if(score<90){
            return 'E';
        }else{
            return 'O';
