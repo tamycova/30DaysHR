@@ -4,9 +4,11 @@ Hi! This repo was intended for my daily uploads of python3 solutions, currently 
 
 - C#
 - C++
-- Java
+- C
 - Haskell
+- Java
 - Javascript
+- Objective-C
 - Python 2 and 3
 - Ruby
 - Scala
