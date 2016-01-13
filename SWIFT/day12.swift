@@ -8,13 +8,13 @@ class Grade : Student{
     
    func calculate () -> Character{
      switch score {
-     case where score<40 :
+     case 0..<40 :
         return 'D'
-     case where score<60 :
+     case 40..<60 :
         retutn 'B'
-     case where score<75 :
+     case 60..<75 :
         retutn 'A'
-     case where score<90 :
+     case 75..<90 :
         retutn 'E'
      default :
         retutn '0'
