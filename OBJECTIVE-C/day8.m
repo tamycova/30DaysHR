@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 
-
 NSArray* getAllInput() {
     
     NSArray* buffer = nil;
@@ -15,11 +14,13 @@ NSArray* getAllInput() {
         }
         // otherwise add lines to buffer
         buffer = [inputString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        [inputString release];
     }
     return buffer;
 }
 
 int main(int argc, const char * argv[]) {
+    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
     NSArray* input = getAllInput();
     int inputIndex = 0;
     int n = ((NSString*)input[inputIndex++]).intValue;
@@ -41,6 +42,8 @@ int main(int argc, const char * argv[]) {
             printf("Not found\n");
         }
     }
+    [dict release];
+    [pool drain];
     return 0;
 }
 
