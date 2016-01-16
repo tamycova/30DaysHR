@@ -1,0 +1,8 @@
+    init(a : [Int]){
+        elements = a
+    }
+
+    func computeDifference() {
+        elements.sortInPlace() // high compilation time than day14.3
+        maximumDifference = elements.last! - elements.first!
+    }
