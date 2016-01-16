@@ -20,8 +20,6 @@ class Solution{
             // don't forget the initial case!
             // head is NULL b.a.e. on first run
             head = _new;
-        } else if (head->next == NULL) {
-            head->next = _new;
         } else {
             Node* start = head;
             while(start->next != NULL) {
