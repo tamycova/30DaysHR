@@ -4,7 +4,7 @@ import Foundation
 class Difference {
 
   // MARK: Private Instance variables
-  private var elements = [Int]()
+  private var elements          = [Int]()
   private var minimumPairs      = [Int]()
   private var minimumDifference = 0
     
@@ -12,7 +12,6 @@ class Difference {
   init?(a: [Int]) { // Fail if we don't have atleast two
     if a.count > 1 {
       elements = a
-      minimumDifference = abs(a[0]-a[1])
     }
   }
 
