@@ -33,3 +33,6 @@ class Solution
         public int Abs { get; set; }
     }
 }
+
+// Benchmark on hackerrank is as follow:
+// Test Case #0:   0.03s Test Case #1:   0.03s Test Case #2:   0.02s Test Case #3:   0.03s Test Case #4:   0.11s
