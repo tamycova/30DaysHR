@@ -1,48 +1,36 @@
 #include <cmath>
 #include <cstdio>
+#include <vector>
 #include <iostream>
-#include <list>
-#include <algorithm>
-
-std::list<long long int> changeToBinary(long long int num)
-{
-	std::list<long long int> val;
-
-	for (int q = 0; num > 0; q++)
-	{
-		if ((num % 2) == 0)
-		{
-			val.push_back(0);
-		}
-		else
-		{
-			val.push_back(1);
-		}
-		num /= 2;
-	}
-	return val;
-}
+#include <bitset>
+#include <string.h>
+using namespace std;
 
 int main() {
-
-	int t = 0;
-	std::cin >> t;
-	// for number of test cases
-	for (int i = 0; i < t; i++)
-	{
-		//get input 
-		long long int n = 0;
-		std::cin >> n;
-		std::list<long long int> binary;
-		binary = changeToBinary(n);
-		binary.reverse();
-		for (auto f : binary)
-		{
-			std::cout << f ;
-
-		}
-		std::cout << "\n";
-
-	}
-	return 0;
+    int t; cin >> t;
+    vector<string> answers(t);
+    
+    for (int i = 0; i < t; i++) {
+        int x; cin >> x;
+        string binary = bitset<32>(x).to_string();
+        answers[i] = binary;
+    }
+    for (string& x : answers) {
+    	// the problem wants us to remove leading zeros:
+    	// thus, we must find the first 1 in the binary number
+        int start_printing = 0;
+        string zero = "0"; // make a string to use in comparisons
+        for (int i = 0, n = x.size(); i < n; i++) {
+            if (zero[0] == x[i]) continue; // i want to be explicit about continuing
+            else {
+                start_printing = i; // saves index of first 1
+                break; // breaks the loop to escape overwriting start_printing
+            }
+        }
+        
+        for (int i = start_printing, n = x.size(); i < n; i++)
+            cout << x[i];
+        cout << endl;
+    }
+    return 0;
 }
