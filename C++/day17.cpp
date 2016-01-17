@@ -31,11 +31,11 @@ int main() {
     	if(scanf("%d %d",&n,&p)==2){
 
         	try {
-               int ans=myCalculator.power(n,p);
-               cout<<ans<<endl; 
+                int ans=myCalculator.power(n,p);
+                cout<<ans<<endl; 
         	}
          	catch(exception& e){
-            	cout<<e.what()<<endl;
+                cout<<e.what()<<endl;
          	}
          	
       	}
