@@ -9,10 +9,8 @@ class Difference {
   private var minimumDifference = 0
     
   // MARK: Initializer(s)
-  init?(a: [Int]) { // Fail if we don't have atleast two
-    if a.count > 1 {
-      elements = a
-    }
+  init(a: [Int]) {
+    elements = a
   }
 
   // Check & store pairs with the [same] least difference
