@@ -34,9 +34,7 @@ class Difference {
 
   // Print out the pairs
   func printPairs() {
-    minimumPairs.forEach { element in
-      print("\(element)", terminator: " ")
-    }
+    minimumPairs.forEach { print("\($0)", terminator: " ") }
   }
 }
 
