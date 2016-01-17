@@ -6,7 +6,7 @@ class Difference {
   // MARK: Private Instance variables
   private var elements          = [Int]()
   private var minimumPairs      = [Int]()
-  private var minimumDifference = 0
+  private var minimumDifference = Int.max
     
   // MARK: Initializer(s)
   init(a: [Int]) {
@@ -25,7 +25,7 @@ class Difference {
 
       if difference < minimumDifference {
         minimumDifference = difference
-        minimumPairs      = [Int]() 
+        minimumPairs      = []
         minimumPairs.append(elements[i-1])
         minimumPairs.append(elements[i])
       }
@@ -44,8 +44,7 @@ class Difference {
 let n = Int(readLine()!)!
 let a = readLine()!.characters.split(" ").map {Int(String($0))!}.sort()
 
-if let d = Difference(a: a) {
-  d.computeMinimumDifference()
-  d.printPairs()
-}
+let d = Difference(a: a)
+d.computeMinimumDifference()
+d.printPairs()
 
