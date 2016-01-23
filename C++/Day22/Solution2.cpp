@@ -1,7 +1,3 @@
-		int getHeight(Node* root){
-            if (root == NULL){
-                return 0;
-            } else {
-                return max (getHeight(root->right)+1, getHeight(root->left)+1);
-            }
-        }
+int getHeight(Node* root){
+	return root==NULL ? 0 : max(getHeight(root->right), getHeight(root->left)) + 1;
+}
