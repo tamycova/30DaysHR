@@ -33,3 +33,5 @@ class Solution
         return true;
     }
 }
+
+// Profiling : every answer in 0.02s with that code
