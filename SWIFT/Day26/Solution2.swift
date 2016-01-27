@@ -1,8 +1,6 @@
-//
-//
 import Foundation
 
-// Format: Day Month Year
+// Date Format: DD MM YYYY
 class Date {
   
   // MARK: Private member variables
@@ -19,6 +17,17 @@ class Date {
   
   func differenceBetweenMonths(otherDate: Date) -> Int {
     return abs(month - otherDate.month)
+  }
+  
+  /// differenceBetweenDates returns the number of dates between "this"
+  /// and otherDate. E.g., if this is Jan 25, 2000  and otherDate is
+  /// Jan 10, 2000 differenceBetweenDates would return 15
+  func differenceBetweenDates(otherDate: Date) -> Int {
+    
+    let thisDays  = daysAfter1_1_1753()
+    let otherDays = otherDate.daysAfter1_1_1753()
+    
+    return thisDays - otherDays
   }
   
   /// daysAfter1_1_1753 returns an int that represents the number of days
@@ -47,15 +56,13 @@ class Date {
     return total
   }
   
-  /// withinSameMonth returns true if this date's month is the same as otherDate's month
+  /// withinSameMonth returns true if this date's month is the same as
+  /// otherDate's month, but within the same year.
   func withinSameMonth(otherDate: Date) -> Bool {
-    if year == otherDate.year {
-      return month == otherDate.month // && year == otherDate.year
-    } else {
-      return false
-    }
+    return month == otherDate.month && year == otherDate.year
   }
   
+  /// withinSameYear returns true iff dates are within the same year
   func withinSameYear(otherDate: Date) -> Bool {
     return year == otherDate.year
   }
@@ -103,6 +110,7 @@ class Date {
   }
 }
 
+
 // MARK: Main
 struct Constants {
   static let HR15Hackos  = 15
@@ -128,7 +136,6 @@ if !returned.happensOnOrBefore(expected) {
     let months = returned.differenceBetweenMonths(expected)
     fine = Constants.HR500Hackos * months
   } else {
-  
     fine = Constants.HRMaxHackos
   }
 }
