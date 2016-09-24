@@ -1,4 +1,4 @@
-    func printArray<T>(a: [T]) {
+    func printArray (a: [type]) {
         for elem in a {
             print(elem)
         }
