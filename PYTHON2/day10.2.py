@@ -1,0 +1,1 @@
+exec"print format(int(raw_input()),'0b')\n"*int(raw_input())
