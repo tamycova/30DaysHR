@@ -1,29 +1,49 @@
-class Person{
+#include <iostream>
+using namespace std;
+class Person
+{
 public:
-   int age ;
-   Person(int initial_Age);
-   void amIOld();
-   void yearPasses();
+    int age;
+    void amIOld();
+    void person();
 };
-Person::Person(int initialAge){
-    if (initialAge >= 0) {
-        age = initialAge;
-    } else {
-        age = 0;
-        cout << "This person is not valid, setting age to 0." << endl;
-    }
-}
-void Person::amIOld(){
-    if (age < 13) {
-        cout << "You are young." << endl;
-    } else if (age >= 13 && age < 18) {
-        cout << "You are a teenager." << endl;
-    } else {
-        cout << "You are old." << endl;
-    }
-}
-    
 
-void Person::yearPasses(){
-    age++;
+void Person::person()
+{
+    int init_Age = age;
+    if (init_Age > 0)
+    {
+        age = init_Age;
+    }
+    else
+    {
+        age = 0;
+        cout << "The number is invaild." << endl;
+    }
+}
+
+void Person::amIOld()
+{
+    if (age < 13)
+    {
+        cout << "You are too young." << endl;
+    }
+    else if (age >= 13 && age < 18)
+    {
+        cout << "You are teenager." << endl;
+    }
+    else
+    {
+        cout << "You are adult." << endl;
+    }
+}
+
+int main()
+{
+    int age;
+    cin >> age;
+    Person person;
+    person.age = age;
+    person.person();
+    person.amIOld();
 }
